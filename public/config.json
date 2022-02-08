@@ -75,15 +75,7 @@
   "schema": {
     "arguments": {
       "execute": {
-        "inArguments": [
-          {
-            "discountCode": {
-              "dataType": "Text",
-              "direction": "in",
-              "access": "visible"
-            }
-          }
-        ],
+        "inArguments": [],
         "outArguments": []
       }
     }

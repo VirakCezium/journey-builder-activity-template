@@ -82,20 +82,12 @@ exports.execute = function (req, res) {
             return res.status(401).json({});
         }
 
-        if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
+        console.log("hello");
+        if (Math.random() > 0.5)
+            res.status(200).json({ "branchResult": "viewed_item" });
+        else
+            res.status(200).json({ "branchResult": "no_activity" });
 
-            // decoded in arguments
-            var decodedArgs = decoded.inArguments[0];
-
-            logData(req);
-            if (Math.random() > 0.5)
-                res.status(200).json({ "branchResult": "viewed_item" });
-            else
-                res.status(200).json({ "branchResult": "no_activity" });
-        } else {
-            console.error('inArguments invalid.');
-            return res.status(400).json({ error });
-        }
     });
 };
 
