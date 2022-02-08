@@ -17,7 +17,7 @@
     "execute": {
       "inArguments": [],
       "outArguments": [],
-      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/execute",
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/execute/",
       "verb": "POST",
       "body": "",
       "header": "",
@@ -28,22 +28,22 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/save",
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/save/",
       "verb": "POST",
       "useJwt": true
     },
     "publish": {
-      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/publish",
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/publish/",
       "verb": "POST",
       "useJwt": true
     },
     "stop": {
-      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/stop",
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/stop/",
       "verb": "POST",
       "useJwt": true
     },
     "validate": {
-      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/validate",
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/validate/",
       "verb": "POST",
       "useJwt": true
     }
