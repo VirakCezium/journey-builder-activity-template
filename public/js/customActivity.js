@@ -18,7 +18,7 @@ define([
     connection.on('requestedDataSources', onRequestedDataSources);
 
     connection.on('clickedNext', save);
-   
+
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
@@ -27,21 +27,23 @@ define([
         connection.trigger('requestEndpoints');
         connection.trigger('requestInteraction');
         connection.trigger('requestTriggerEventDefinition');
-        connection.trigger('requestDataSources');  
+        connection.trigger('requestDataSources');
+
+        document.getElementById('done').addEventListener('click', save);
 
     }
 
-    function onRequestedDataSources(dataSources){
+    function onRequestedDataSources(dataSources) {
         console.log('*** requestedDataSources ***');
         console.log(dataSources);
     }
 
-    function onRequestedInteraction (interaction) {    
+    function onRequestedInteraction(interaction) {
         console.log('*** requestedInteraction ***');
         console.log(interaction);
-     }
+    }
 
-     function onRequestedTriggerEventDefinition(eventDefinitionModel) {
+    function onRequestedTriggerEventDefinition(eventDefinitionModel) {
         console.log('*** requestedTriggerEventDefinition ***');
         console.log(eventDefinitionModel);
     }
@@ -51,7 +53,7 @@ define([
         if (data) {
             payload = data;
         }
-        
+
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
@@ -65,15 +67,16 @@ define([
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                
-              
+
+
             });
         });
 
         connection.trigger('updateButton', {
             button: 'next',
             text: 'done',
-            visible: true
+            visible: true,
+            enabled: true
         });
     }
 
@@ -87,13 +90,10 @@ define([
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
-
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens
         }];
-        
+
         payload['metaData'].isConfigured = true;
 
         console.log(payload);
