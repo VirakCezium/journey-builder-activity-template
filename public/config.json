@@ -1,69 +1,91 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-        "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
-        "category": "message"
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "iconSmall": "images/iconSmall.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Template",
+      "description": "A Template for a custom Journey Builder activity",
+      "step1Label": "Configure Activity"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": true,
+      "timeout": 10000
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/save",
+      "verb": "POST",
+      "useJwt": true
     },
-    "type": "REST",
-    "lang": {
-        "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
-          "step1Label": "Configure Activity"
-        }
+    "publish": {
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/publish",
+      "verb": "POST",
+      "useJwt": true
     },
-    "arguments": {
-        "execute": {
-           "inArguments":[],
-          "outArguments": [],
-          "url": "https://<your-domain-here>/journeybuilder/execute",
-           "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 10000
-        }
+    "stop": {
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/stop",
+      "verb": "POST",
+      "useJwt": true
     },
-    "configurationArguments": {
-      "save": {
-        "url": "https://<your-domain-here>/journeybuilder/save",
-          "verb": "POST",
-        "useJwt": true
-       },
-       "publish": {
-        "url": "https://<your-domain-here>/journeybuilder/publish",
-           "verb": "POST",
-        "useJwt": true
-       },
-      "stop": {
-        "url": "https://<your-domain-here>/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
+    "validate": {
+      "url": "https://cezium-custom-activity.herokuapp.com/journeybuilder/validate",
+      "verb": "POST",
+      "useJwt": true
+    }
+  },
+  "userInterfaces": {
+    "configInspector": {
+      "size": "scm-lg",
+      "emptyIframe": true
+    }
+  },
+  "outcomes": [
+    {
+      "arguments": {
+        "branchResult": "no_activity"
       },
-      "validate": {
-        "url": "https://<your-domain-here>/journeybuilder/validate",
-        "verb": "POST",
-        "useJwt": true
+      "metaData": {
+        "label": "No Activity"
       }
     },
-    "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
-    ],
-    "userInterfaces": {
-        "configModal": {
-            "height": 400,
-            "width": 1000,
-          "fullscreen": false
-        }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [],
-                "outArguments": []
-            }
-        }
+    {
+      "arguments": {
+        "branchResult": "viewed_item"
+      },
+      "metaData": {
+        "label": "Viewed Item"
+      }
     }
+  ],
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "discountCode": {
+              "dataType": "Text",
+              "direction": "in",
+              "access": "visible"
+            }
+          }
+        ],
+        "outArguments": []
+      }
+    }
+  }
 }
