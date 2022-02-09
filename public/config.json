@@ -7,8 +7,8 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Template",
-      "description": "A Template for a custom Journey Builder activity",
+      "name": "Custom Activity",
+      "description": "Custom Activity in Journey Builder",
       "step1Label": "Configure Activity"
     }
   },
@@ -56,18 +56,18 @@
   "outcomes": [
     {
       "arguments": {
-        "branchResult": "no_activity"
+        "branchResult": "haut"
       },
       "metaData": {
-        "label": "No Activity"
+        "label": "Haut"
       }
     },
     {
       "arguments": {
-        "branchResult": "viewed_item"
+        "branchResult": "bas"
       },
       "metaData": {
-        "label": "Viewed Item"
+        "label": "Bas"
       }
     }
   ],

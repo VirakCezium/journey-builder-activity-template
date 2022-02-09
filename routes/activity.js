@@ -84,9 +84,9 @@ exports.execute = function (req, res) {
 
         console.log("hello");
         if (Math.random() > 0.5)
-            res.status(200).json({ "branchResult": "viewed_item" });
+            res.status(200).json({ "branchResult": "haut" });
         else
-            res.status(200).json({ "branchResult": "no_activity" });
+            res.status(200).json({ "branchResult": "bas" });
 
     });
 };
