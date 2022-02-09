@@ -7,7 +7,7 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Custom Activity",
+      "name": "Haut ou Bas?",
       "description": "Custom Activity in Journey Builder",
       "step1Label": "Configure Activity"
     }
@@ -49,7 +49,7 @@
   },
   "userInterfaces": {
     "configInspector": {
-      "size": "scm-lg",
+      "size": "scm-sm",
       "emptyIframe": true
     },
     "configModal": {
