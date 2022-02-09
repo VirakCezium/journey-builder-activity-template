@@ -51,6 +51,11 @@
     "configInspector": {
       "size": "scm-lg",
       "emptyIframe": true
+    },
+    "configModal": {
+      "height": 200,
+      "width": 300,
+      "fullscreen": true
     }
   },
   "outcomes": [
