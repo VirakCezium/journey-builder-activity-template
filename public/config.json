@@ -2,7 +2,7 @@
   "workflowApiVersion": "1.1",
   "metaData": {
     "icon": "images/psyduck.png",
-    "category": "message"
+    "category": "flow"
   },
   "type": "REST",
   "lang": {
