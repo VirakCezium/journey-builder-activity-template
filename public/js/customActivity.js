@@ -37,7 +37,23 @@ define([
         setTimeout(() => {
             const token = sdk.getSessionToken();
             console.log(token);
+
+            (async () => {
+                const rawResponse = await fetch('https://cezium-custom-activity.herokuapp.com/savetoken', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ token })
+                });
+                const content = await rawResponse.json();
+
+                console.log(content);
+            })();
         }, 2000);
+
+
 
     }
 

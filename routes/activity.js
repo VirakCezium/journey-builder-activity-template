@@ -91,6 +91,14 @@ exports.execute = function (req, res) {
     });
 };
 
+exports.savetoken = function (req, res) {
+    // Data from the req and put it in an array accessible to the main app.
+    //console.log( req.body );
+    logData(req);
+    console.log("token:", req.params.token);
+    res.send(200, 'Publish');
+};
+
 
 /*
  * POST Handler for /publish/ route of Activity.
