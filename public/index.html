@@ -23,13 +23,6 @@
 
             require(config, dependencies);
         })();
-        const sdk = new SDK();
-        sdk.triggerAuth();
-        console.log('triggerAuth');
-        setTimeout(() => {
-            const token = sdk.getSessionToken();
-            console.log(token);
-        }, 2000);
     </script>
 </head>
 
