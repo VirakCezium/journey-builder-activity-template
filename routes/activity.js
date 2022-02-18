@@ -1,5 +1,6 @@
 'use strict';
 var util = require('util');
+const axios = require('axios');
 
 // Deps
 const Path = require('path');
@@ -119,3 +120,11 @@ exports.validate = function (req, res) {
     logData(req);
     res.send(200, 'Validate');
 };
+
+exports.login = function (req, res) {
+    logData(req);
+
+    axios.get('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
+        res.send(response);
+    });
+}
