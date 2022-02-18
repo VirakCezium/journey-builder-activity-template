@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="//code.jquery.com/git/jquery-git.min.js"></script>
     <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript" src="js/blocksdk.js"></script>
     <script type="text/javascript">
         (function () {
             var config = {
@@ -22,6 +23,12 @@
 
             require(config, dependencies);
         })();
+        const sdk = new SDK();
+        sdk.triggerAuth();
+        setTimeout(() => {
+            const token = sdk.getSessionToken();
+            console.log(token);
+        }, 2000);
     </script>
 </head>
 
