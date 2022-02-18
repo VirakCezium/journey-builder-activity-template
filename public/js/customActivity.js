@@ -31,6 +31,14 @@ define([
 
         document.getElementById('done').addEventListener('click', save);
 
+        const sdk = new SDK();
+        sdk.triggerAuth();
+        console.log('render triggerAuth');
+        setTimeout(() => {
+            const token = sdk.getSessionToken();
+            console.log(token);
+        }, 2000);
+
     }
 
     function onRequestedDataSources(dataSources) {
