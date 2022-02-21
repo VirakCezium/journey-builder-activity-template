@@ -127,6 +127,6 @@ exports.login = function (req, res) { // called by blockSDK
         console.log(JSON.stringify(response))
         res.send(200, response);
     }).catch(error => {
-        console.log('ERROR');
+        console.log('ERROR', error);
     });
 }
