@@ -125,6 +125,7 @@ exports.login = function (req, res) {
     logData(req);
 
     axios.get('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
+        console.log(response);
         res.send(response);
     });
 }
