@@ -31,12 +31,7 @@ define([
 
         document.getElementById('done').addEventListener('click', save);
 
-        const sdk = new SDK();
-        sdk.triggerAuth();
 
-        setTimeout(() => {
-            console.log("$$$$$$$$$$$$$$$$$$$$$TOKEN:", sdk.getSessionToken());
-        }, 10000);
     }
 
     function onRequestedDataSources(dataSources) {
@@ -55,6 +50,15 @@ define([
     }
 
     function initialize(data) {
+
+        const sdk = new SDK();
+        sdk.triggerAuth();
+
+        setTimeout(() => {
+            console.log("$$$$$$$$$$$$$$$$$$$$$TOKEN:", sdk.getSessionToken());
+        }, 10000);
+
+
         console.log(data);
         if (data) {
             payload = data;
