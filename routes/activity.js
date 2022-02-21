@@ -124,7 +124,7 @@ exports.validate = function (req, res) {
 exports.login = function (req, res) { // called by blockSDK
     console.log("-----> login");
     axios.get('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
-        console.log(JSON.stringify(response))
+        console.log(response);
         res.send(200, response);
     }).catch(error => {
         console.log('ERROR', error);
