@@ -123,10 +123,8 @@ exports.validate = function (req, res) {
 
 exports.login = function (req, res) { // called by blockSDK
     console.log("-----> login");
-    fetch('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
-        if (response.redirected) {
-            console.log("***** FINAL URL", res.headers.get('location'));
-        }
+    axios.get('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
+        console.log(JSON.stringify(response))
     }).catch(error => {
         console.log('ERRROROR');
     });
