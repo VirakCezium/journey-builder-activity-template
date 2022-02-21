@@ -122,7 +122,7 @@ exports.validate = function (req, res) {
 };
 
 exports.login = function (req, res) { // called by blockSDK
-    log.console("-----> login");
+    console.log("-----> login");
     fetch('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
         if (response.redirected) {
             console.log("***** FINAL URL", res.headers.get('location'));
