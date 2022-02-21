@@ -121,13 +121,14 @@ exports.validate = function (req, res) {
     res.send(200, 'Validate');
 };
 
-exports.login = function (req, res) {
-    logData(req);
-
-    axios.get('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
-        console.log("URL: " + response.request.responseURL);
-        res.send(response);
-    }).catch(err => {
-        console.log("ERR: " + err);
+exports.login = function (req, res) { // called by blockSDK
+    log.console("-----> login");
+    fetch('https://hyperion-cpdepkr42q-lz.a.run.app/block/login').then(response => {
+        if (response.redirected) {
+            console.log("***** FINAL URL", res.headers.get('location'));
+        }
+    }).catch(error => {
+        console.log('ERRROROR');
     });
+    res.send(200, 'Login');
 }

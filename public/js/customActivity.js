@@ -33,29 +33,10 @@ define([
 
         const sdk = new SDK();
         sdk.triggerAuth();
-        console.log('render triggerAuth');
+
         setTimeout(() => {
-            const token = sdk.getSessionToken();
-            console.log(token);
-            setTimeout(() => {
-                (async () => {
-                    const rawResponse = await fetch('https://cezium-custom-activity.herokuapp.com/savetoken', {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ token })
-                    });
-                    const content = await rawResponse.json();
-
-                    console.log(content);
-                })();
-            }, 2000);
-        }, 2000);
-
-
-
+            console.log("$$$$$$$$$$$$$$$$$$$$$TOKEN:", sdk.getSessionToken());
+        }, 10000);
     }
 
     function onRequestedDataSources(dataSources) {
